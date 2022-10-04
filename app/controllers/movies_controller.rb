@@ -1,6 +1,4 @@
 class MoviesController < ApplicationController
-    @all_ratings = Movie.all_ratings
-    @ratings_to_show = Movie.all_ratings
 
     def show
       id = params[:id] # retrieve movie ID from URI route
@@ -11,6 +9,7 @@ class MoviesController < ApplicationController
     def index
       @movies = Movie.all
       @all_ratings = Movie.all_ratings
+      @ratings_to_show = Movie.all_ratings
     end
   
     def new
