@@ -7,5 +7,10 @@ class Movie < ActiveRecord::Base
     # if ratings_list is an array such as ['G', 'PG', 'R'], retrieve all
     #  movies with those ratings
     # if ratings_list is nil, retrieve ALL movies
+    if ratings_list.present?
+      return Movie.where('rating IN (?)', ratings_list)
+    else
+      return Movie.all
     end
+  end
 end
