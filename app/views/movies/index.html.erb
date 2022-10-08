@@ -18,12 +18,12 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th class="<%= 'hilite bg-warning' if @sort == 'title' %>"> 
-        <%= link_to "Movie Title", movies_path({'sort': 'title', ratings: @ratings_to_show.to_h {|i| [i, 1]}}) %>
+      <th>
+        <%= link_to "Movie Title", movies_path({'sort': 'title', ratings: @ratings_to_show.to_h {|i| [i, 1]}, class: @title_selected}) %>
       </th>
       <th>Rating</th>
-      <th class="<%= 'hilite bg-warning' if @sort == 'date' %>"> 
-        <%= link_to "Release Date", movies_path({'sort': 'date', ratings: @ratings_to_show.to_h {|i| [i, 1]}}) %>
+      <th> 
+        <%= link_to "Release Date", movies_path({'sort': 'date', ratings: @ratings_to_show.to_h {|i| [i, 1]}, class: @date_selected}) %>
       </th>
       <th>More Info</th>
     </tr>
