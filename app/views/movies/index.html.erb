@@ -19,11 +19,11 @@
   <thead>
     <tr>
       <th>
-        <%= link_to "Movie Title", movies_path({'sort': 'title', ratings: @ratings_to_show.to_h {|i| [i, 1]}, class: @title_selected}) %>
+        <%= link_to "Movie Title", movies_path({'sort': 'title', ratings: @ratings_to_show.to_h {|i| [i, 1]}}), class: @title_selected, id: 'title_header') %>
       </th>
       <th>Rating</th>
       <th> 
-        <%= link_to "Release Date", movies_path({'sort': 'date', ratings: @ratings_to_show.to_h {|i| [i, 1]}, class: @date_selected}) %>
+        <%= link_to "Release Date", movies_path({'sort': 'date', ratings: @ratings_to_show.to_h {|i| [i, 1]}}), class: @date_selected, id: 'release_date_header') %>
       </th>
       <th>More Info</th>
     </tr>
