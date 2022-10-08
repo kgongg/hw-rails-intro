@@ -21,11 +21,11 @@ class MoviesController < ApplicationController
         @movies = Movie.with_ratings(@ratings_to_show)
         if params['sort'] == 'title'
           @sort = 'title'
-          @title_selected = 'hilite p-3 mb-2 bg-warning'
+          @title_selected = 'hilite p-3 mb-2 bg-warning text-primary'
           @movies = Movie.with_ratings(@ratings_to_show).order(:title)
         elsif params['sort'] == 'date'
           @sort = 'date'
-          @date_selected = 'hilite p-3 mb-2 bg-warning'
+          @date_selected = 'hilite p-3 mb-2 bg-warning text-primary'
           @movies = Movie.with_ratings(@ratings_to_show).order(:release_date)
         end
       end
