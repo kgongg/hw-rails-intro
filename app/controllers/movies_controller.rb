@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
       print "params: #{params}" 
       @all_ratings = Movie.all_ratings
       if !params[:ratings].present? && !params['sort'].present? && 
-        (session[:checked_ratings].present? || session['sort'].present?)
+        (session[:checked_ratings].present? || session[:sort].present?)
         redirect_to movies_path({ratings: session[:checked_ratings], 'sort': session[:sort]})
       else
         if params[:ratings].present?
